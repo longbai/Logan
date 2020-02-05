@@ -248,7 +248,7 @@
                 <configuration>
                     <httpConnector>
                         <port>8087</port>
-                        <host>localhost</host>
+                        <host>0.0.0.0</host>
                     </httpConnector>
                     <scanIntervalSeconds>1</scanIntervalSeconds>
                 </configuration>
