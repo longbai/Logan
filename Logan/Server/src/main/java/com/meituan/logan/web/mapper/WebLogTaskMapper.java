@@ -23,7 +23,7 @@ public interface WebLogTaskMapper {
 
     void updateStatus(@Param("taskId") long taskId, @Param("status") int status);
 
-    long maxId();
+    Long maxId();
 
     List<WebLogTaskDTO> queryByRange(@Param("minId") long minId, @Param("maxId")long maxId);
 }

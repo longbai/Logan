@@ -87,7 +87,10 @@ public class WebTaskServiceImpl implements WebTaskService {
     @Override
     public List<WebLogTaskDTO> latest(int count) {
         try {
-            long maxId = webLogTaskMapper.maxId();
+            Long maxId = webLogTaskMapper.maxId();
+            if (maxId == null){
+                maxId = 0L;
+            }
             long minId = Math.max(0, maxId - count);
             return webLogTaskMapper.queryByRange(minId, maxId);
         } catch (Exception e) {
