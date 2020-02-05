@@ -31,7 +31,7 @@ function report() {
     var now = new Date();
     var sevenDaysAgo = new Date(+now - 6 * 24 * 3600 * 1000);
     Logan.report({
-        reportUrl: 'https://yourServerAddressToAcceptLogs',
+        reportUrl: 'http://127.0.0.1:8087/logan/web/upload.json',
         deviceId: 'test-logan-web',
         fromDayString: timeFormat2Day(sevenDaysAgo),
         toDayString: timeFormat2Day(now),
