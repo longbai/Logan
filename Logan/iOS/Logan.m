@@ -410,7 +410,7 @@ NSString *_Nonnull loganTodaysDate(void) {
 			[req addValue:appId forHTTPHeaderField:@"appId"];
 		}
 		if(unionId.length >0){
-			[req addValue:appId forHTTPHeaderField:@"unionId"];
+			[req addValue:unionId forHTTPHeaderField:@"unionId"];
 		}
 		NSString *bundleVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
 		if (bundleVersion.length > 0) {
@@ -421,7 +421,7 @@ NSString *_Nonnull loganTodaysDate(void) {
 			[req addValue:deviceId forHTTPHeaderField:@"deviceId"];
 		}
 		[req addValue:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"] forHTTPHeaderField:@"appVersion"];
-		[req addValue:@"2" forHTTPHeaderField:@"deviceType"];
+		[req addValue:@"2" forHTTPHeaderField:@"platform"];
 		[req addValue:date forHTTPHeaderField:@"fileDate"];
 		
 		NSURL *fileUrl = [NSURL fileURLWithPath:filePatch];
