@@ -21,7 +21,8 @@
  */
 
 #import "LGViewController.h"
-#import "Logan.h"
+#import "LogReviewer.h"
+//#import "Logan.h"
 #include <zlib.h>
 #import <CommonCrypto/CommonCryptor.h>
 
@@ -43,13 +44,15 @@ typedef enum : NSUInteger {
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    NSData *keydata = [@"0123456789012345" dataUsingEncoding:NSUTF8StringEncoding];
-    NSData *ivdata = [@"0123456789012345" dataUsingEncoding:NSUTF8StringEncoding];
+//    NSData *keydata = [@"AVXiZtIRXuqRoVzf" dataUsingEncoding:NSUTF8StringEncoding];
+//    NSData *ivdata = [@"BXuuKlzMAVXiZtIR" dataUsingEncoding:NSUTF8StringEncoding];
     uint64_t file_max = 10 * 1024 * 1024;
     // logan初始化，传入16位key，16位iv，写入文件最大大小(byte)
-    loganInit(keydata, ivdata, file_max);
+//    loganInit(keydata, ivdata, file_max);
+    logRvInit(@"127.0.0.1:9998", @"BXuuKlzMAVXiZtIRXuqRoVzf", file_max);
     // 将日志输出至控制台
-    loganUseASL(YES);
+    logRvDumpLog(YES);
+    logRvEnableHttps(NO);
 
     self.view.backgroundColor = [UIColor whiteColor];
 }
@@ -61,7 +64,7 @@ typedef enum : NSUInteger {
 }
 
 - (IBAction)allFilesInfo:(id)sender {
-    NSDictionary *files = loganAllFilesInfo();
+    NSDictionary *files = logRvAllFilesInfo();
 
     NSMutableString *str = [[NSMutableString alloc] init];
     for (NSString *k in files.allKeys) {
@@ -73,13 +76,13 @@ typedef enum : NSUInteger {
 
 - (IBAction)uploadFile:(id)sender {
 	// please repalce with your host
-	loganUpload(@"http://127.0.0.1:8087/logan/upload.json", loganTodaysDate(), @"testAppId", @"testUnionId",@"testDeviceId", ^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-		if(error){
-			NSLog(@"%@",error);
-		}else{
-			NSLog(@"upload succeed");
-		}
-	});
+    logRvUpload([NSDate new], @"testuser", @"testDevice", nil, ^(NSError * _Nullable error) {
+        if(error){
+            NSLog(@"%@",error);
+        }else{
+            NSLog(@"upload succeed");
+        }
+    });
 }
 
 /**
@@ -92,6 +95,6 @@ typedef enum : NSUInteger {
     NSMutableString *s = [NSMutableString string];
     [s appendFormat:@"%d\t", (int)eventType];
     [s appendFormat:@"%@\t", label];
-    logan(LoganTypeAction, s);
+    logRv(LoganTypeAction, s);
 }
 @end

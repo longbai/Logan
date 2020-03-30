@@ -26,6 +26,8 @@
 		A706FA55212AAE3200F819F4 /* Logan.m in Sources */ = {isa = PBXBuildFile; fileRef = A706FA54212AAE3200F819F4 /* Logan.m */; };
 		A74F422F20D0FEAB0008E4F8 /* Logan.podspec in Resources */ = {isa = PBXBuildFile; fileRef = A74F422E20D0FEAB0008E4F8 /* Logan.podspec */; };
 		A7C489B920F7512C001F74C0 /* libclogan.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A7C489B320F750A1001F74C0 /* libclogan.a */; };
+		FD926DF12420B5C20063C461 /* LogReviewer.m in Sources */ = {isa = PBXBuildFile; fileRef = FD926DF02420B5C20063C461 /* LogReviewer.m */; };
+		FD926DF22420B5C20063C461 /* LogReviewer.m in Sources */ = {isa = PBXBuildFile; fileRef = FD926DF02420B5C20063C461 /* LogReviewer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = A7C4885A20F74AC5001F74C0;
 			remoteInfo = clogan;
+		};
+		FD926DEE2420B5860063C461 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A7C489AD20F750A1001F74C0 /* clogan.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 84C23C1421723A1900588A19;
+			remoteInfo = "clogan-macOS";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -82,6 +91,8 @@
 		A74F422E20D0FEAB0008E4F8 /* Logan.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Logan.podspec; path = ../../Logan.podspec; sourceTree = "<group>"; };
 		A7C489AD20F750A1001F74C0 /* clogan.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = clogan.xcodeproj; path = ../../../Logan/clogan.xcodeproj; sourceTree = "<group>"; };
 		DF957FBE944AABF7798BD54E /* Pods_Logan_iOS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Logan_iOS_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD926DEC2420B5850063C461 /* LogReviewer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogReviewer.h; sourceTree = "<group>"; };
+		FD926DF02420B5C20063C461 /* LogReviewer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogReviewer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +158,8 @@
 			isa = PBXGroup;
 			children = (
 				6003F59C195388D20070C39A /* LGAppDelegate.h */,
+				FD926DEC2420B5850063C461 /* LogReviewer.h */,
+				FD926DF02420B5C20063C461 /* LogReviewer.m */,
 				6003F59D195388D20070C39A /* LGAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* LGViewController.h */,
@@ -196,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				A7C489B320F750A1001F74C0 /* libclogan.a */,
+				FD926DEF2420B5860063C461 /* libclogan-macOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -270,6 +284,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -296,6 +311,13 @@
 			fileType = archive.ar;
 			path = libclogan.a;
 			remoteRef = A7C489B220F750A1001F74C0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FD926DEF2420B5860063C461 /* libclogan-macOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libclogan-macOS.a";
+			remoteRef = FD926DEE2420B5860063C461 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -350,6 +372,7 @@
 				6003F5A7195388D20070C39A /* LGViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				A706FA55212AAE3200F819F4 /* Logan.m in Sources */,
+				FD926DF12420B5C20063C461 /* LogReviewer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +381,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F5BC195388D20070C39A /* Tests.m in Sources */,
+				FD926DF22420B5C20063C461 /* LogReviewer.m in Sources */,
 				A706F9E521145B9D00F819F4 /* LoganTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
